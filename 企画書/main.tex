@@ -1,0 +1,591 @@
+\documentclass[uplatex,dvipdfmx,a4paper,11pt]{jsarticle}
+
+\usepackage[margin=22mm,headheight=16pt,footskip=12mm]{geometry}
+\usepackage[dvipdfmx]{graphicx,xcolor,hyperref}
+\usepackage{pxjahyper}
+\usepackage{booktabs,longtable,tabularx,array,colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,shapes.geometric}
+
+\definecolor{FpuPurple}{HTML}{6A3D8F}
+\definecolor{FpuGreen}{HTML}{A6C43A}
+\definecolor{Navy}{HTML}{18334D}
+\definecolor{Blue}{HTML}{2C6487}
+\definecolor{Orange}{HTML}{D96A3A}
+\definecolor{PalePurple}{HTML}{F2EDF6}
+\definecolor{PaleGreen}{HTML}{F1F5E5}
+\definecolor{PaleBlue}{HTML}{EAF2F7}
+\definecolor{PaleOrange}{HTML}{FAEEE8}
+\definecolor{LightGray}{HTML}{F3F4F5}
+\definecolor{MidGray}{HTML}{66727D}
+\definecolor{RuleGray}{HTML}{D8DDE1}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=Navy,
+  urlcolor=Blue,
+  pdftitle={橋田ゼミ 冬の発表会「みんなで一曲」プロジェクト企画書},
+  pdfauthor={福知山公立大学 橋田ゼミ}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{MidGray}橋田ゼミ 冬の発表会 2026（仮）}
+\fancyhead[R]{\small\color{MidGray}内部共有用・更新版}
+\fancyfoot[L]{\small\color{MidGray}福知山公立大学 橋田ゼミ}
+\fancyfoot[R]{\small\color{MidGray}\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\titleformat{\section}
+  {\Large\bfseries\color{Navy}}
+  {\colorbox{Navy}{\color{white}\makebox[2.2em][c]{\thesection}}}
+  {0.8em}{}
+  [\vspace{0.25em}{\color{RuleGray}\titlerule}]
+\titlespacing*{\section}{0pt}{2.4em}{1.2em}
+
+\titleformat{\subsection}
+  {\large\bfseries\color{Blue}}
+  {\thesubsection}{0.7em}{}
+\titlespacing*{\subsection}{0pt}{1.8em}{0.7em}
+
+\setlist[itemize]{leftmargin=1.7em,itemsep=0.35em,topsep=0.4em}
+\setlist[enumerate]{leftmargin=2em,itemsep=0.4em,topsep=0.4em}
+\renewcommand{\arraystretch}{1.35}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\statusconfirmed}{\colorbox{PaleGreen}{\textcolor{Navy}{\small 確定}}}
+\newcommand{\statusproposal}{\colorbox{PaleBlue}{\textcolor{Navy}{\small 案}}}
+\newcommand{\statuspending}{\colorbox{PaleOrange}{\textcolor{Navy}{\small 要確認}}}
+
+\newcommand{\infobox}[2]{%
+  \begin{center}
+    \begin{tikzpicture}
+      \node[draw=RuleGray, fill=#1, rounded corners=2pt,
+            inner sep=10pt, text width=0.92\linewidth, align=left] {#2};
+    \end{tikzpicture}
+  \end{center}
+}
+
+\newcommand{\roleheader}[3]{%
+  \noindent
+  \begin{tabularx}{\linewidth}{@{}L{28mm}Y@{}}
+    \rowcolor{LightGray}
+    \textbf{主担当} & #1 \\
+    \textbf{副担当} & #2 \\
+    \textbf{目的} & #3 \\
+  \end{tabularx}
+  \vspace{0.8em}
+}
+
+\begin{document}
+
+% -----------------------------------------------------------------------------
+% Cover
+% -----------------------------------------------------------------------------
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[Navy] (current page.north west) rectangle ([yshift=-19mm]current page.north east);
+  \fill[FpuGreen] ([xshift=22mm,yshift=-19mm]current page.north west)
+    rectangle ([xshift=82mm,yshift=-21mm]current page.north west);
+  \fill[FpuPurple] ([xshift=82mm,yshift=-19mm]current page.north west)
+    rectangle ([xshift=142mm,yshift=-21mm]current page.north west);
+\end{tikzpicture}
+
+\vspace*{14mm}
+\begin{flushright}
+  \includegraphics[width=25mm]{assets/fpu-logomark.png}
+\end{flushright}
+
+\vspace{11mm}
+{\color{Blue}\bfseries\large 福知山公立大学 橋田ゼミ}
+
+\vspace{6mm}
+{\Huge\bfseries\color{Navy} 冬の発表会 2026}\par
+\vspace{2mm}
+{\Large\color{MidGray}（正式名称未定）}\par
+
+\vspace{12mm}
+\begin{tikzpicture}
+  \node[fill=Navy, text=white, minimum width=0.94\linewidth,
+        minimum height=34mm, rounded corners=3pt, align=left,
+        inner xsep=12mm] {\fontsize{24.88}{30}\selectfont\bfseries
+        「みんなで一曲」プロジェクト\\[-1mm]
+        \fontsize{12}{18}\selectfont\mdseries 企画書（更新版）};
+\end{tikzpicture}
+
+\vspace{14mm}
+\noindent\begin{tabularx}{\linewidth}{@{}L{35mm}Y@{}}
+  \toprule
+  \textbf{開催日} & 2026年12月15日（火） \\
+  \textbf{会場} & 福知山サンホテル 扇ホール（予約済み） \\
+  \textbf{演奏曲} & Mrs. GREEN APPLE「点描の唄」 \\
+  \textbf{公開範囲} & 一般公開 \\
+  \textbf{共有対象} & 指導教員・4年生・作成者 \\
+  \textbf{版} & Ver. 0.3／2026年10月16日 \\
+  \bottomrule
+\end{tabularx}
+
+\vfill
+\infobox{PaleOrange}{%
+  \textbf{文書の位置づけ}\quad
+  本書は、2026年10月13日（火）の全体ゼミと各担当の話し合い結果を反映した更新版である。
+  未確定事項は「案」「要確認」として記載し、担当者・指導教員との協議後に更新する。}
+
+\clearpage
+
+\tableofcontents
+\vfill
+\infobox{PaleBlue}{%
+  \textbf{ステータスの見方}\quad
+  \statusconfirmed\ 決定済み・提供情報に基づく事項　
+  \statusproposal\ 現時点の見込み・たたき台　
+  \statuspending\ 担当者または会場への確認が必要な事項}
+\clearpage
+
+% -----------------------------------------------------------------------------
+\section{企画概要}
+
+\subsection{目的}
+橋田ゼミの学生が一つの楽曲を共同で演奏する過程を通じて、学年や担当を越えた協働を実践する。
+また、一般公開の発表会として、ゼミ活動の成果と学生の主体的な取り組みを地域へ伝える。
+
+\subsection{基本情報}
+\noindent\begin{tabularx}{\linewidth}{@{}L{35mm}Y L{23mm}@{}}
+  \toprule
+  \textbf{項目} & \textbf{内容} & \textbf{状態} \\
+  \midrule
+  イベント正式名称 & 未定（本書では「橋田ゼミ 冬の発表会 2026」を仮称とする） & \statuspending \\
+  企画名 & 「みんなで一曲」プロジェクト & \statusproposal \\
+  開催日 & 2026年12月15日（火） & \statusconfirmed \\
+  開催時間 & 開場・開演・終演時刻は未定 & \statuspending \\
+  全体構成 & 午前：3・4年生の研究中間発表／午後：合同企画・演奏（時間調整中） & \statusproposal \\
+  会場 & 福知山サンホテル 扇ホール（予約済み） & \statusconfirmed \\
+  演奏曲 & Mrs. GREEN APPLE「点描の唄」 & \statusconfirmed \\
+  公開方法 & 一般公開。事前申込・入場料・定員運用は未定 & \statusconfirmed \\
+  広報開始 & 10月中に制作・印刷手配、遅くとも11月14日までに一般告知開始 & \statusproposal \\
+  メディア対応 & 地域メディア等の招聘を検討 & \statusproposal \\
+  会場費 & 現時点で約50,000円 & \statusconfirmed \\
+  楽器運搬 & 指導教員（橋田）の車両を利用する見込み & \statusproposal \\
+  \bottomrule
+\end{tabularx}
+
+\subsection{今回の成功条件（案）}
+\begin{enumerate}
+  \item 11月10日までに全体で使用できる楽譜を完成し、全員へ配布できる。
+  \item 出演者22名の役割・練習参加可否・必要楽器を把握できる。
+  \item 開催1か月以上前から、ビラ・Web・学内外の告知を開始できる。
+  \item 本番前に、会場を想定した全体リハーサルと機材確認を実施できる。
+  \item 一般来場者が安心して鑑賞できる受付・案内・安全体制を整えられる。
+\end{enumerate}
+
+% -----------------------------------------------------------------------------
+\section{実施体制}
+
+\subsection{担当構成}
+\begin{center}
+\begin{tikzpicture}[
+  node distance=10mm and 8mm,
+  every node/.style={font=\small,align=center},
+  top/.style={draw=Navy,fill=Navy,text=white,rounded corners=2pt,
+    minimum width=50mm,minimum height=13mm},
+  team/.style={draw=RuleGray,rounded corners=2pt,minimum width=39mm,
+    minimum height=18mm,text width=36mm},
+  subteam/.style={draw=Orange,fill=PaleOrange,rounded corners=2pt,
+    minimum width=48mm,minimum height=17mm,text width=45mm},
+  line/.style={draw=Navy,-{Stealth[length=2mm]}}
+]
+  \node[top] (all) {全体運営\\髙橋里実・金丸陽香};
+  \node[team,fill=PaleGreen,below=16mm of all] (venue)
+    {会場・機材\\主：本庄幸\\副：西田紗菜・山崎承太郎};
+  \node[team,fill=PaleBlue,left=8mm of venue] (pr)
+    {広報\\主：川野陸人\\副：山口瑞悠・大橋佳生};
+  \node[team,fill=PaleOrange,right=8mm of venue] (coord)
+    {企画調整・参加者管理\\主：川人すばる\\副：髙橋里実・宮田悠太郎・寺本有里};
+  \node[subteam,below=13mm of coord] (score)
+    {楽譜作成WG\\全体管理：金丸陽香\\編曲：赤堀千晴／原曲譜：渡邉・上道・中田};
+  \draw[line] (all) -- (pr);
+  \draw[line] (all) -- (venue);
+  \draw[line] (all) -- (coord);
+  \draw[line] (coord) -- (score);
+\end{tikzpicture}
+\end{center}
+
+\subsection{意思決定と情報共有（案）}
+\begin{itemize}
+  \item 演奏・練習に関する最終調整は、演奏リーダーの髙橋里実を中心に行う。
+  \item 各担当は、進捗・課題・次回までの作業を全体運営へ定期報告する。
+  \item 重要な変更（曲構成、会場配置、予算、公開情報）は全体運営と指導教員へ共有する。
+  \item 出演者向け連絡と一般向け広報を分け、誤った未確定情報を公開しない。
+\end{itemize}
+
+% -----------------------------------------------------------------------------
+\section{担当別企画}
+
+\subsection{全体運営}
+\roleheader{髙橋里実・金丸陽香}{---}{全体の判断軸と日程を整え、各担当が期限内に準備を進められる状態をつくる。}
+
+\textbf{主な業務}
+\begin{itemize}
+  \item 全体スケジュール・当日タイムテーブルの作成
+  \item 各担当の役割分担、期限、進捗の確認
+  \item 未決定事項と問題点の整理、判断が必要な事項の取りまとめ
+  \item 指導教員・担当間の情報共有
+  \item 演奏全体の方針調整（演奏リーダー：髙橋里実）
+  \item 予算の把握、支出承認手順と精算方法の確認
+\end{itemize}
+
+\textbf{成果物（案）}
+\begin{itemize}
+  \item マスタースケジュール、担当・連絡網、課題管理表
+  \item 当日進行表、緊急連絡表、最終確認チェックリスト
+  \item 全体予算表と支出記録
+\end{itemize}
+
+\textbf{10月13日協議後の全体管理事項}
+担当配置と担当別工程を確定した。今後は、正式名称、広報物、当日タイムテーブル、練習環境、会場確認、予算を横断して管理する。
+
+\subsection{広報}
+\roleheader{川野陸人}{山口瑞悠・大橋佳生}{一般の方へ開催情報を正確に届け、来場につなげる。準備過程も記録し、ゼミ活動の価値を伝える。}
+
+\textbf{主な業務}
+\begin{itemize}
+  \item 正式名称、企画概要、紹介文、来場案内の作成
+  \item ビラ・ポスター等の制作、印刷、配架先の整理
+  \item Webサイトの情報更新と公開内容の確認
+  \item 告知対象、媒体、配信時期、更新担当の決定
+  \item 地域メディア等への招聘候補整理、連絡文案作成、取材対応窓口
+  \item 練習・ゼミ・本番の写真／動画記録（公開同意の確認を含む）
+\end{itemize}
+
+\textbf{10月13日協議を踏まえた実施方針}
+\begin{itemize}
+  \item 川野陸人の進捗を主・副担当で共有し、正式名称とチラシ制作を優先して進める。
+  \item 10月中を目標にチラシの仕様・部数・予算・配布先を決定し、制作と印刷手配を行う。
+  \item 学内広報は指導教員・大学の広報経路を確認し、学外メディアには研究発表と音楽企画を組み合わせた特徴が伝わる資料を用意する。
+  \item Web・Instagram・Threads等を中心に継続発信し、準備過程や練習風景も候補とする。投稿頻度は週3～4回程度を目安に担当内で調整する。
+  \item 出演者紹介や写真・動画は本人の同意を前提とし、希望しない学生を掲載対象にしない。
+\end{itemize}
+
+\textbf{広報開始までに必要な成果物}
+\begin{itemize}
+  \item ビラ・ポスターの入稿データと印刷部数表
+  \item Web掲載文、出演者・会場情報、地図、問い合わせ先
+  \item 告知カレンダー、配架・投稿先リスト、メディア連絡先リスト
+  \item 撮影・掲載に関する出演者確認
+  \item 学内向け・学外メディア向けのプレスリリース原稿
+  \item 投稿テーマ、公開日、素材担当を定めたSNS運用表
+\end{itemize}
+
+\infobox{PaleOrange}{%
+  \textbf{公開前の注意}\quad
+  正式名称、開催時間、申込方法、入場料、撮影方針は未定である。
+  ビラの本制作・メディア案内前に全体運営と指導教員の確認を受ける。}
+
+\subsection{会場・機材}
+\roleheader{本庄幸}{西田紗菜・山崎承太郎}{出演者が安全に演奏でき、一般来場者が見やすく聴きやすい会場環境を整える。}
+
+\textbf{主な業務}
+\begin{itemize}
+  \item 扇ホールの利用時間、設備、搬入口、電源、音量制限等の確認
+  \item 楽器・音響機材・備品の棚卸しと不足品の手配
+  \item 演奏者、観客、受付、撮影位置を含む会場レイアウトの作成
+  \item 音響機材の接続図、サウンドチェック手順の作成
+  \item 指導教員（橋田）の車両を前提とした搬入・搬出計画
+  \item 当日の設営、転換、撤収、原状復帰の役割分担
+\end{itemize}
+
+\textbf{機材確認の前提}
+ゼミ所有の楽器は原則としてゼミ備品を使用し、所有していない楽器は出演者が持参する。
+所有状況、数量、状態、ケース、付属品は別途棚卸しを行う。
+
+\textbf{10月13日協議後の工程}
+\par\medskip\noindent\begin{tabularx}{\linewidth}{@{}L{38mm}Y@{}}
+  \toprule
+  \textbf{期間} & \textbf{作業} \\
+  \midrule
+  10月13日～27日 & 必要機材数の確認、大まかな搬入・搬出計画、使用車両数と積載分担の検討 \\
+  10月13日～11月17日 & 演奏者・機材・観客動線を踏まえたレイアウト検討。楽譜完成後に音量バランスを確認して確定 \\
+  11月中 & 扇ホールまたは代替会場で事前の音響・配置確認を行うため、利用可能日を照会 \\
+  \bottomrule
+\end{tabularx}
+
+\par\medskip\noindent\textbf{確認事項}\quad
+演奏時に着席を希望する人数と椅子の必要数、譜面台等の数量、楽器・機材を載せる車両と必要台数を確認する。
+
+\par\medskip\noindent\begin{tabularx}{\linewidth}{@{}L{34mm}Y L{28mm}@{}}
+  \toprule
+  \textbf{区分} & \textbf{確認対象} & \textbf{現状} \\
+  \midrule
+  楽器 & バイオリン、ハンドベル、鍵盤ハーモニカ、ベース、ドラム、トランペット、ハープ、ギター、キーボード、ホルン、ピアノ、打楽器類 & 所有確認前 \\
+  音響 & PA、ミキサー、メイン／モニタースピーカー、マイク、DI、スタンド、ケーブル & \statuspending \\
+  舞台備品 & 椅子、譜面台、延長コード、電源タップ、養生、案内表示 & \statuspending \\
+  搬送 & 車両積載量、搬入口、搬送順、駐車場所、積み込み担当 & \statuspending \\
+  安全管理 & ケーブル養生、避難導線、貴重品、楽器保管、緊急時対応 & \statuspending \\
+  \bottomrule
+\end{tabularx}
+
+\subsection{企画調整・参加者管理}
+\roleheader{川人すばる}{髙橋里実・宮田悠太郎・寺本有里}{出演者22名の情報、練習、楽器、立ち位置、当日案内を一元管理し、全員が参加しやすい状態をつくる。}
+
+\textbf{主な業務}
+\begin{itemize}
+  \item 出演確認、担当楽器、楽器持参可否、経験、連絡先の把握
+  \item 参加できない曜日・時間帯の調査と練習日程の調整
+  \item パート分け、演奏順、立ち位置、並び順の調整
+  \item 全体練習・パート練習・リハーサルの出欠管理
+  \item 本番の集合時間、場所、服装、持ち物、搬入方法の出演者案内
+  \item 楽譜作成ワーキンググループとの進捗共有
+\end{itemize}
+
+\textbf{初回アンケート項目（案）}
+出演可否、担当楽器、本人所有／ゼミ所有、持参可否、楽器経験、希望パート、参加可能日時、本番当日の到着・退出可能時刻、連絡上の配慮事項。
+
+\textbf{10月13日協議後の工程}
+\par\medskip\noindent\begin{tabularx}{\linewidth}{@{}L{38mm}Y@{}}
+  \toprule
+  \textbf{期間} & \textbf{作業} \\
+  \midrule
+  ～10月20日 & 個人発表者アンケートの回収、練習候補日の案内 \\
+  10月20日～27日 & 午前の研究発表と午後の企画を含む当日タイムテーブル案の作成 \\
+  10月27日～11月10日 & 練習日の流れ、演奏配置、必要な集合単位の確認 \\
+  11月11日以降 & 会場・機材担当と連携し、タイムテーブルと当日の流れを継続調整 \\
+  \bottomrule
+\end{tabularx}
+
+\par\medskip\noindent\textbf{練習環境の要確認事項}\quad
+火曜2限を使用できる範囲と音出し可否、ゼミ室と3201教室の併用可否を確認する。
+個人練習を基本とし、全員またはパートで合わせる候補日を回答結果から設定する。
+
+\subsection{楽譜作成ワーキンググループ}
+\roleheader{金丸陽香（全体管理・最終確認）}{赤堀千晴（メイン編曲）、渡邉浩平・上道匠真・中田周佑（原曲譜作成）}{22名の編成で演奏可能な「点描の唄」のアレンジを決め、練習に使える楽譜を期限内に配布する。}
+
+\textbf{主な業務}
+\begin{itemize}
+  \item 金丸陽香：全体進捗の管理、作成楽譜の確認・調整、最終確認
+  \item 渡邉浩平・上道匠真・中田周佑：原曲の構成確認、楽器別の分担、原曲譜の入力
+  \item 赤堀千晴：原曲譜をもとにしたメイン編曲、演奏メンバーに合わせた修正
+  \item 全員：編曲方針と曲全体の構成を協議し、各演奏者の見せ場、改善点、音量バランスを確認
+  \item パート譜の統合・配布、版番号と更新履歴の管理
+\end{itemize}
+
+\infobox{PaleOrange}{%
+  \textbf{資料利用上の注意}\quad
+  YouTube等で公開されている楽譜を参照する場合は、出所と利用条件を確認する。
+  無断転載や公開データの再配布は行わず、必要な権利確認は全体運営・指導教員と共有する。}
+
+\textbf{楽譜制作スケジュール（10月13日決定）}
+\par\medskip\noindent\begin{tabularx}{\linewidth}{@{}L{34mm}Y@{}}
+  \toprule
+  \textbf{期間} & \textbf{作業} \\
+  \midrule
+  10月13日～26日 & 原曲譜の作成。公開資料と原曲音源を確認し、楽器ごとに分担して入力 \\
+  10月27日～11月9日 & 赤堀千晴を中心とした編曲作業、全員での確認と修正 \\
+  11月10日 & 初版楽譜の完成・出演者への配布 \\
+  11月中旬～下旬 & 練習結果に応じた修正・調整、版管理 \\
+  \bottomrule
+\end{tabularx}
+
+\par\medskip\noindent\textbf{費用・他担当への依頼}\quad
+現時点では基本的に費用発生なし。印刷が必要な場合は部数と方法を確認する。他担当への依頼事項は現時点ではなし。
+
+% -----------------------------------------------------------------------------
+\section{全体スケジュール（案）}
+
+\begin{longtable}{@{}L{25mm}L{38mm}L{45mm}L{45mm}@{}}
+  \toprule
+  \textbf{時期} & \textbf{全体運営} & \textbf{企画・演奏} & \textbf{広報／会場} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{時期} & \textbf{全体運営} & \textbf{企画・演奏} & \textbf{広報／会場} \\
+  \midrule
+  \endhead
+  10月13日 & 担当体制と工程を確認 & 楽譜WG確定、個人発表者アンケート待ち & 機材・搬送検討開始、広報課題共有 \\
+  10月20日まで & 正式名称等の意思決定整理 & 原曲譜作成、アンケート回収 & チラシ仕様・部数・配布先の検討 \\
+  10月20日～27日 & 進捗確認、概算予算更新 & 原曲譜作成、当日タイムテーブル案作成 & 必要機材・搬送案の整理、広報物制作 \\
+  10月27日～11月9日 & 課題・遅延確認 & 編曲、練習の流れ・配置確認 & 印刷手配、学内外プレス原稿作成 \\
+  11月10日 & 初版確認、遅延事項の解消 & 初版楽譜完成・全員配布 & Web・配布物の公開内容確認 \\
+  11月14日まで & 公開情報承認 & 練習予定の具体化 & 一般向け広報開始、ビラ配布、招聘連絡 \\
+  11月中旬～下旬 & 週次進捗確認 & 楽譜修正、パート練習・全体練習 & レイアウト確認、機材手配、取材調整 \\
+  12月上旬 & 当日進行案確定 & 全体リハーサル & 会場レイアウト・搬送計画確定 \\
+  本番1週間前 & 最終確認会 & 通し練習 & 来場案内、機材動作確認、印刷物準備 \\
+  12月15日 & 全体統括、進行管理 & リハーサル・本番演奏 & 設営、受付、記録、撤収 \\
+  終了後1週間 & 振り返り、精算 & 楽譜・記録整理 & お礼・活動報告、写真整理 \\
+  \bottomrule
+\end{longtable}
+
+% -----------------------------------------------------------------------------
+\section{概算予算（初期見込み）}
+
+\noindent\begin{tabularx}{\linewidth}{@{}L{40mm}L{35mm}Y@{}}
+  \toprule
+  \textbf{費目} & \textbf{見込み} & \textbf{前提・確認事項} \\
+  \midrule
+  会場費 & 約50,000円 & 現時点の把握額。追加設備・延長利用の有無を確認 \\
+  ビラ・ポスター印刷 & 10,000～20,000円 & 部数、カラー、サイズ、学内印刷可否により変動 \\
+  広報・発送・掲示関連 & 5,000～10,000円 & 郵送、掲示用品、メディア向け資料等 \\
+  有料配架・地域広告（任意） & 0～30,000円／月 & スーパー等への設置・広告は料金と効果を比較し、実施前に承認 \\
+  機材・消耗品 & 10,000～30,000円 & ケーブル、電池、譜面、養生、レンタル不足分 \\
+  運搬・駐車 & 5,000～10,000円 & 車両燃料、駐車、追加搬送の必要性により変動 \\
+  会場案内・当日用品 & 5,000～10,000円 & 案内表示、受付用品、名札、文具等 \\
+  予備費 & 10,000～15,000円 & 突発的な購入・追加印刷等 \\
+  \midrule
+  \textbf{概算合計} & \textbf{95,000～175,000円} & 有料広告1か月分を上限側へ加算。著作権手続費等は未算入 \\
+  \bottomrule
+\end{tabularx}
+
+\infobox{PaleOrange}{%
+  \textbf{要確認}\quad
+  一般公開の場で市販楽曲を演奏するため、会場・大学の既存手続の有無を含め、著作権・演奏利用に関する確認を早期に行う。
+  必要な費用が判明した場合は予算へ追加する。}
+
+% -----------------------------------------------------------------------------
+\section{リスクと対応方針}
+
+\small
+\begin{longtable}{@{}L{36mm}L{87mm}L{29mm}@{}}
+  \toprule
+  \textbf{リスク} & \textbf{初期対応案} & \textbf{主担当} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{リスク} & \textbf{初期対応案} & \textbf{主担当} \\
+  \midrule
+  \endhead
+  楽譜完成の遅延 & 原曲譜と編曲の担当を分け、10月26日に原曲譜、11月10日に初版配布を完了する & 楽譜作成WG \\
+  参照楽譜の権利問題 & 公開資料の出所・利用条件を確認し、無断転載・再配布を避ける & 楽譜作成WG／全体 \\
+  22名の日程不一致 & 参加可能時間を早期回収し、全体練習とパート練習を分ける & 企画調整 \\
+  編成に対する音量差 & 試奏で役割を調整し、必要に応じてマイク・DI・配置で補う & 演奏／会場 \\
+  会場機材の不足 & 設備一覧とゼミ備品を棚卸しし、不足品を11月中に手配する & 会場・機材 \\
+  搬送量が車両を超える & 寸法・重量・積載順を確認し、追加車両候補を準備する & 会場・機材 \\
+  公開情報の変更 & 確定前の時刻等を断定せず、Webを正本として更新日を明記する & 広報 \\
+  広報開始の遅延 & 正式名称とチラシ仕様を優先決定し、印刷とWeb準備を並行する & 広報／全体 \\
+  撮影・メディア対応 & 出演者同意、撮影可能範囲、取材窓口を事前に定める & 広報／全体 \\
+  著作権手続の不足 & 指導教員・大学・会場へ確認し、必要な申請と費用を整理する & 全体運営 \\
+  \bottomrule
+\end{longtable}
+\normalsize
+
+% -----------------------------------------------------------------------------
+\clearpage
+\section{10月13日協議結果と直近の判断事項}
+
+\subsection{協議結果の要約}
+\noindent\begin{tabularx}{\linewidth}{@{}L{38mm}Y@{}}
+  \toprule
+  \textbf{担当} & \textbf{決定・共有された内容} \\
+  \midrule
+  楽譜作成 & 5名の役割を確定。10月26日までに原曲譜、11月9日までに編曲、11月10日に初版を配布 \\
+  会場・機材 & 10月27日までに機材・搬送案を整理し、11月17日までレイアウトを検討。事前の音響確認場所を確保する \\
+  企画調整 & 10月20日のアンケート回収後に当日タイムテーブルを作成し、11月11日以降も流れを調整 \\
+  広報 & 正式名称とチラシ制作を優先し、配布方法、学内外プレス、SNSでの継続発信を具体化する \\
+  \bottomrule
+\end{tabularx}
+
+\subsection{次回までに判断・確認する事項}
+\begin{enumerate}
+  \item 正式名称、チラシの仕様・部数・印刷予算・配布先
+  \item 午前の研究発表と午後の企画を含む当日構成、開場・開演・終演時刻
+  \item 学外メディアへ訴求する企画の特徴と、プレスリリースの送付先・時期
+  \item 火曜2限の使用範囲、音出し可否、ゼミ室・3201教室の併用可否
+  \item 椅子・譜面台・音響機材の必要数、使用車両と積載計画、事前音響確認日
+  \item SNSの媒体、週次投稿計画、出演者紹介・練習記録に関する本人同意
+  \item 「点描の唄」のキー、尺、ボーカル構成、楽譜・演奏に関する権利手続
+\end{enumerate}
+
+\infobox{PaleBlue}{%
+  \textbf{記録の扱い}\quad
+  楽譜作成・会場機材・企画調整の各担当メモと、山口瑞悠・大橋佳生による広報検討のボイスメモをもとに、実行項目へ整理した。
+  発言の逐語録ではなく、担当・期限・判断事項を確認するための要約である。}
+
+% -----------------------------------------------------------------------------
+\section{出演予定者・担当楽器}
+
+\small
+\begin{longtable}{@{}r L{34mm}L{110mm}@{}}
+  \toprule
+  \textbf{No.} & \textbf{氏名} & \textbf{担当楽器} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{No.} & \textbf{氏名} & \textbf{担当楽器} \\
+  \midrule
+  \endhead
+  1 & 金丸陽香 & バイオリン \\
+  2 & 川野陸人 & ハンドベル \\
+  3 & 川人すばる & 鍵盤ハーモニカ \\
+  4 & 髙橋里実 & ベース \\
+  5 & 本庄幸 & ドラム \\
+  6 & 赤堀千晴 & トランペット \\
+  7 & 嶋村匡哲 & ハープ \\
+  8 & 津波璃生 & ベース \\
+  9 & 西田紗菜 & ハンドベル \\
+  10 & 松永稜平 & ハンドベル \\
+  11 & 宮田悠太郎 & ギター（リード） \\
+  12 & 山口瑞悠 & ギター（バック） \\
+  13 & 渡邉浩平 & キーボード \\
+  14 & 上道匠真 & バイオリン \\
+  15 & 大橋佳生 & ボーカル／アコースティックギター \\
+  16 & 大林青空 & ハンドベル \\
+  17 & 杉本匡弥 & 鍵盤ハーモニカ \\
+  18 & 寺本有里 & ホルン \\
+  19 & 中田周佑 & ピアノ \\
+  20 & 中出結衣 & ハンドベル \\
+  21 & 山崎承太郎 & ボーカル／トライアングル／ウィンドチャイム \\
+  22 & 松井羚央那 & ハンドベル \\
+  \bottomrule
+\end{longtable}
+\normalsize
+
+\subsection{編成集計}
+\noindent\begin{tabularx}{\linewidth}{@{}L{43mm}L{25mm}Y@{}}
+  \toprule
+  \textbf{区分} & \textbf{人数} & \textbf{備考} \\
+  \midrule
+  ハンドベル & 6名 & 音・パート割り、必要ベル数を要確認 \\
+  バイオリン & 2名 & 楽器持参／ゼミ備品を要確認 \\
+  鍵盤ハーモニカ & 2名 & 楽器・吹口の所有区分を要確認 \\
+  ベース & 2名 & 本数、アンプ、DI、役割分担を要確認 \\
+  ギター & 3名 & リード、バック、アコギ兼ボーカル \\
+  鍵盤 & 2名 & キーボード1名、ピアノ1名 \\
+  管楽器 & 2名 & トランペット1名、ホルン1名 \\
+  その他 & 5名 & ドラム、ハープ、ボーカル兼打楽器等（重複を含む） \\
+  \bottomrule
+\end{tabularx}
+
+% -----------------------------------------------------------------------------
+\clearpage
+\section{未決定事項一覧}
+
+\noindent\begin{tabularx}{\linewidth}{@{}L{45mm}Y L{30mm}@{}}
+  \toprule
+  \textbf{項目} & \textbf{次のアクション} & \textbf{目安} \\
+  \midrule
+  正式名称 & 候補を募り、チラシ入稿前に全体で決定 & 10月下旬 \\
+  開場・開演・終演時刻 & 午前の研究発表と午後の企画、会場利用可能時間を確認 & 10月27日以降 \\
+  参加申込・入場料 & 想定来場者数と会場運用を踏まえて判断 & 広報開始前 \\
+  キー・尺・ボーカル構成 & 確定したWGで原曲譜と編曲案を確認し、試奏で決定 & 10月26日～11月9日 \\
+  練習日程・場所 & 10月20日までの回答を集計し、音出し可能な教室と合わせ日を設定 & 10月下旬 \\
+  会場設備・舞台寸法 & 扇ホールへ確認し、一覧化 & 10月中 \\
+  ゼミ所有楽器・機材 & 現物を棚卸しし、状態と付属品を記録 & 10月中 \\
+  ビラ仕様・部数・配架先 & 対象・予算・印刷方法、有料配架の要否を決定 & 10月下旬 \\
+  メディア招聘先 & 学内経路と学外候補、企画の訴求点、案内文、取材窓口を整理 & 11月上旬 \\
+  撮影・公開同意 & 出演者と来場者向けの運用を決定 & 広報開始前 \\
+  著作権・演奏手続 & 大学・会場へ確認し必要事項を処理 & 早期 \\
+  \bottomrule
+\end{tabularx}
+
+\vfill
+\begin{center}
+  {\color{RuleGray}\rule{0.7\linewidth}{0.4pt}}\\[1em]
+  {\small\color{MidGray}
+  本企画書は2026年10月16日時点の情報に基づく更新版です。\\
+  確定事項の追加後、担当者・指導教員の確認を経て改訂します。}
+\end{center}
+
+\end{document}
