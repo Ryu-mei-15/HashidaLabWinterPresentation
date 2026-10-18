@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>橋田ゼミ 冬の発表会 2026｜福知山公立大学</title>
-    <meta name="description" content="福知山公立大学 橋田ゼミ 冬の発表会。2026年12月15日、福知山サンホテル 扇ホールにて開催予定です。">
+    <meta name="description" content="2026年12月15日、福知山サンホテル扇ホールで開催する福知山公立大学橋田ゼミ冬の発表会。研究発表と学生による音楽企画を一般公開します。">
     <meta name="theme-color" content="#071325">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23071325'/%3E%3Cpath d='M13 39c10-16 27-16 38 0' fill='none' stroke='%23ffc86a' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='23' r='5' fill='%23f4f1e8'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="./styles.css">
@@ -12,29 +12,37 @@
   <body>
     <a class="skip-link" href="#main">本文へ移動</a>
 
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="冬の発表会 トップへ">
+    <header class="site-header" data-header>
+      <a class="brand" href="./index.html" aria-label="冬の発表会 トップへ">
         <span class="brand-mark" aria-hidden="true">冬</span>
         <span class="brand-copy">
           <strong>橋田ゼミ 冬の発表会</strong>
           <small>FUKUCHIYAMA 2026</small>
         </span>
       </a>
-      <nav class="site-nav" aria-label="ページ内メニュー">
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu">
+        <span></span><span></span><span></span><span class="sr-only">メニューを開く</span>
+      </button>
+      <nav class="site-nav" id="site-menu" aria-label="メインメニュー">
         <a href="#about">発表会について</a>
-        <a href="#outline">開催概要</a>
+        <a href="./project.html">音楽企画</a>
+        <a href="./news.html">お知らせ</a>
         <a href="#venue">会場</a>
-        <a href="#information">ご案内</a>
       </nav>
     </header>
 
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-inner">
-          <div>
+          <div class="hero-copy">
             <p class="eyebrow">Hashida Seminar / Winter Presentation</p>
+            <p class="status-pill">一般公開・開催決定</p>
             <h1 id="hero-title"><span>福知山公立大学</span>冬の発表会</h1>
-            <p class="hero-lead">橋田ゼミの学生たちが、日々の学びと探究の現在地を地域のみなさまへひらく一日です。</p>
+            <p class="hero-lead">研究と音楽。学生たちの学びの現在地を、地域のみなさまと分かち合う一日です。</p>
+            <div class="hero-actions">
+              <a class="button button--light" href="#program">予定プログラム</a>
+              <a class="text-link text-link--light" href="./project.html">「みんなで一曲」を見る <span aria-hidden="true">→</span></a>
+            </div>
           </div>
 
           <div class="date-card" aria-label="開催日時と会場">
@@ -43,7 +51,7 @@
             <p class="date-card-place">福知山サンホテル<br>扇ホール</p>
           </div>
         </div>
-        <p class="hero-status">詳細は決まり次第お知らせします</p>
+        <p class="hero-status">Last updated 2026.10.18</p>
       </section>
 
       <section class="intro reveal" id="about" aria-labelledby="about-title">
@@ -58,6 +66,34 @@
         </div>
       </section>
 
+      <section class="news-strip" aria-labelledby="latest-title">
+        <div class="news-strip-inner reveal">
+          <div class="news-strip-heading">
+            <span class="section-number">LATEST NEWS</span>
+            <h2 id="latest-title">お知らせ</h2>
+          </div>
+          <ol class="news-preview">
+            <li>
+              <a href="./news.html#news-20261018">
+                <time datetime="2026-10-18">2026.10.18</time>
+                <span class="news-tag">更新情報</span>
+                <strong>予定プログラムと音楽企画を公開しました</strong>
+                <span class="news-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="./news.html#news-20261016">
+                <time datetime="2026-10-16">2026.10.16</time>
+                <span class="news-tag">準備状況</span>
+                <strong>楽譜づくりと会場準備を進めています</strong>
+                <span class="news-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+          </ol>
+          <a class="text-link" href="./news.html">お知らせ一覧 <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
       <section class="details" id="outline" aria-labelledby="outline-title">
         <div class="details-inner reveal">
           <div class="details-head">
@@ -65,37 +101,130 @@
               <span class="section-number">02 / OUTLINE</span>
               <h2 id="outline-title">開催概要</h2>
             </div>
-            <p class="details-note">現在、プログラムの構成や開始時刻を調整しています。確定した情報から順次、このページでご案内します。</p>
+            <p class="details-note">開催日・会場・一般公開が決定しています。開始時刻と参加方法は、確定次第このサイトでご案内します。</p>
           </div>
 
           <dl class="detail-list">
             <div class="detail-row">
               <dt>開催日</dt>
               <dd class="detail-main"><time datetime="2026-12-15">2026年12月15日（火）</time></dd>
-              <dd class="detail-sub">予定</dd>
+              <dd class="detail-sub">開催決定</dd>
             </div>
             <div class="detail-row">
               <dt>会場</dt>
               <dd class="detail-main">福知山サンホテル 扇ホール</dd>
-              <dd class="detail-sub">福知山市</dd>
+              <dd class="detail-sub">予約済み</dd>
             </div>
             <div class="detail-row">
-              <dt>プログラム</dt>
-              <dd class="detail-main">橋田ゼミ 学生による研究・制作発表</dd>
-              <dd class="detail-sub">詳細未定</dd>
+              <dt>内容</dt>
+              <dd class="detail-main">研究中間発表・合同企画・音楽演奏</dd>
+              <dd class="detail-sub">構成調整中</dd>
             </div>
             <div class="detail-row">
               <dt>参加について</dt>
-              <dd class="detail-main">一般公開を予定しています</dd>
-              <dd class="detail-sub">詳細未定</dd>
+              <dd class="detail-main">一般の方もご来場いただけます</dd>
+              <dd class="detail-sub">一般公開</dd>
             </div>
           </dl>
+        </div>
+      </section>
+
+      <section class="program" id="program" aria-labelledby="program-title">
+        <div class="section-shell reveal">
+          <div class="section-heading section-heading--wide">
+            <div>
+              <span class="section-number">03 / PROGRAM</span>
+              <p class="section-kicker">予定プログラム</p>
+              <h2 id="program-title">研究と音楽、<br>二つの時間。</h2>
+            </div>
+            <p>午前と午後で異なる角度から、橋田ゼミの学びと活動をお伝えします。開始時刻や登壇順などの詳細は現在調整中です。</p>
+          </div>
+
+          <div class="program-grid">
+            <article class="program-card program-card--morning">
+              <p class="program-time">MORNING <span>午前</span></p>
+              <span class="program-number">01</span>
+              <h3>研究中間発表</h3>
+              <p>3・4年生が、それぞれの研究テーマや現在までの取り組みを発表する予定です。</p>
+              <small>発表テーマ・登壇順は後日公開</small>
+            </article>
+            <article class="program-card program-card--afternoon">
+              <p class="program-time">AFTERNOON <span>午後</span></p>
+              <span class="program-number">02</span>
+              <h3>合同企画・音楽演奏</h3>
+              <p>学生が学年や担当を越えて、一つの演奏をつくり上げます。</p>
+              <small>時間・構成は現在調整中</small>
+            </article>
+          </div>
+          <p class="program-note">※上記は2026年10月18日時点の予定です。内容は調整により変更となる場合があります。</p>
+        </div>
+      </section>
+
+      <section class="project-feature" aria-labelledby="project-title">
+        <div class="project-feature-inner reveal">
+          <div class="project-feature-copy">
+            <span class="section-number">04 / MUSIC PROJECT</span>
+            <p class="section-kicker">みんなで一曲</p>
+            <h2 id="project-title">22人で、<br>一曲を。</h2>
+            <p class="song-label">PERFORMING</p>
+            <p class="song-title">Mrs. GREEN APPLE<br>「点描の唄」</p>
+            <p>弦楽器、管楽器、鍵盤、打楽器、ギター、ベース、ボーカル。さまざまな担当が一つになり、橋田ゼミならではの演奏をつくります。</p>
+            <a class="button button--amber" href="./project.html">企画の舞台裏を見る</a>
+          </div>
+
+          <ol class="project-steps" aria-label="企画の進行状況">
+            <li class="is-active">
+              <span>01</span>
+              <div><strong>楽譜をつくる</strong><small>現在進行中</small></div>
+            </li>
+            <li>
+              <span>02</span>
+              <div><strong>パートを重ねる</strong><small>11月より本格化予定</small></div>
+            </li>
+            <li>
+              <span>03</span>
+              <div><strong>会場で届ける</strong><small>12月15日 本番</small></div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="journal" aria-labelledby="journal-title">
+        <div class="section-shell reveal">
+          <div class="section-heading">
+            <div>
+              <span class="section-number">05 / PHOTO JOURNAL</span>
+              <p class="section-kicker">準備の記録</p>
+              <h2 id="journal-title">本番までの景色。</h2>
+            </div>
+            <p>楽譜づくりや合同練習、会場準備の様子を、撮影・掲載の同意が確認できたものから順次お届けします。</p>
+          </div>
+
+          <div class="journal-grid">
+            <figure class="journal-visual">
+              <img src="./assets/winter-fukuchiyama.png" alt="冬の福知山の夜景をイメージしたイベントキービジュアル" width="1672" height="941">
+              <figcaption><span>KEY VISUAL</span> 冬の福知山をイメージしたビジュアル</figcaption>
+            </figure>
+            <div class="photo-placeholder photo-placeholder--large">
+              <span class="photo-index">01</span>
+              <div><strong>楽譜づくり</strong><small>PHOTO COMING SOON</small></div>
+            </div>
+            <div class="photo-placeholder">
+              <span class="photo-index">02</span>
+              <div><strong>合同練習</strong><small>PHOTO COMING SOON</small></div>
+            </div>
+            <div class="photo-placeholder">
+              <span class="photo-index">03</span>
+              <div><strong>会場準備</strong><small>PHOTO COMING SOON</small></div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="venue" id="venue" aria-labelledby="venue-title">
         <div class="venue-inner reveal">
           <div class="venue-card">
+            <p class="venue-card-label">VENUE</p>
             <h3>福知山サンホテル<br>扇ホール</h3>
             <address>〒620-0882<br>京都府福知山市堀2080</address>
             <div class="venue-links">
@@ -105,13 +234,13 @@
           </div>
 
           <div class="venue-copy">
-            <span class="section-number">03 / VENUE</span>
+            <span class="section-number">06 / VENUE</span>
             <p class="section-kicker">会場</p>
             <h2 id="venue-title">福知山で、<br>お会いしましょう。</h2>
-            <p>会場は、福知山市内の福知山サンホテルにある「扇ホール」です。音楽会や講演、研修などにも利用されているホールで、落ち着いて発表をご覧いただけます。</p>
+            <p>会場は、福知山市内の福知山サンホテルにある「扇ホール」です。ご来場方法や受付については、詳細が決まり次第ご案内します。</p>
             <div class="venue-fact">
               <strong>120</strong>
-              <span>名収容のホールです。<br>ご来場方法などの詳細は後日ご案内します。</span>
+              <span>会場案内上の収容目安です。<br>本発表会の募集定員は後日ご案内します。</span>
             </div>
           </div>
         </div>
@@ -120,23 +249,23 @@
       <section class="notice" id="information" aria-labelledby="information-title">
         <div class="notice-inner reveal">
           <div>
-            <span class="section-number">04 / INFORMATION</span>
-            <p class="section-kicker">ご案内</p>
-            <h2 id="information-title">現在、準備中です。</h2>
+            <span class="section-number">07 / INFORMATION</span>
+            <p class="section-kicker">ご来場案内</p>
+            <h2 id="information-title">続報をお待ちください。</h2>
           </div>
 
           <dl class="notice-list">
             <div class="notice-row">
               <dt>開始時刻</dt>
-              <dd>開場・開演時刻は、決まり次第お知らせします。</dd>
+              <dd>開場・開演・終演時刻は、決まり次第お知らせします。</dd>
             </div>
             <div class="notice-row">
               <dt>発表内容</dt>
-              <dd>発表テーマや登壇順を含むプログラムは現在調整中です。</dd>
+              <dd>研究テーマや登壇順を含む詳細プログラムは現在調整中です。</dd>
             </div>
             <div class="notice-row">
               <dt>参加方法</dt>
-              <dd>事前申込の有無など、ご参加に必要な情報は後日掲載します。</dd>
+              <dd>一般公開です。事前申込の有無や入場料などは後日掲載します。</dd>
             </div>
           </dl>
         </div>
@@ -149,28 +278,15 @@
           <p class="footer-title">福知山公立大学 橋田ゼミ 冬の発表会</p>
           <p class="footer-meta">2026年12月15日（火）｜福知山サンホテル 扇ホール</p>
         </div>
-        <p class="footer-note">掲載内容は2026年10月現在の予定です。</p>
+        <nav class="footer-nav" aria-label="フッターメニュー">
+          <a href="./project.html">音楽企画</a>
+          <a href="./news.html">お知らせ</a>
+          <a href="#top">ページ上部へ</a>
+        </nav>
+        <p class="footer-note">イベント名称は仮称です。掲載内容は2026年10月18日現在の情報です。</p>
       </div>
     </footer>
 
-    <script>
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const revealItems = document.querySelectorAll('.reveal');
-
-      if (reduceMotion || !('IntersectionObserver' in window)) {
-        revealItems.forEach((item) => item.classList.add('is-visible'));
-      } else {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.12 });
-
-        revealItems.forEach((item) => observer.observe(item));
-      }
-    </script>
+    <script src="./site.js"></script>
   </body>
 </html>
